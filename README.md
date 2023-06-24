@@ -1,8 +1,9 @@
 # Курс "SQL для начинающих: с нуля до сертификата Oracle" от Заура Трегулова на Udemy
 
-[https://www.udemy.com/course/sql-oracle-certification](https://www.udemy.com/course/sql-oracle-certification/)
+<https://www.udemy.com/course/sql-oracle-certification>
 
-**SQL, Oracle SQL**
+**SQL, Oracle SQL**  
+DML, DDL, TCL, DCL commands, functions, objects  
 
 <details>
     <summary>
@@ -175,7 +176,7 @@
     12.11. INDEX BITMAP  
     12.12. [Домашнее задание](#homework-12)  
     
-13. **DDL часть 3. VIEW, SYNONYM, SEQUENCE**  
+13. **DDL и DCL часть 3. VIEW, SYNONYM, SEQUENCE**  
     13.1. Введение во VIEW  
     13.2. Simple и Complex VIEW  
     13.3. Создание CREATE VIEW  
