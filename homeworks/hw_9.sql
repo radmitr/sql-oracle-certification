@@ -1,4 +1,4 @@
----------- TASK 1 ----------
+/* ---------- TASK 1 ---------- */
 SELECT manager_id, TO_CHAR(null) job_id, TO_NUMBER(null) department_id,
     SUM(salary)
 FROM employees
@@ -12,7 +12,7 @@ SELECT TO_NUMBER(null), TO_CHAR(null), department_id, SUM(salary)
 FROM employees
 GROUP BY department_id;
 
----------- TASK 2 ----------
+/* ---------- TASK 2 ---------- */
 SELECT department_id FROM employees WHERE manager_id = 100
 MINUS
 SELECT department_id FROM employees WHERE manager_id = 145
@@ -27,7 +27,7 @@ SELECT department_id FROM employees WHERE manager_id = 100
 MINUS
 SELECT department_id FROM employees WHERE manager_id IN (145, 201);
 
----------- TASK 3 ----------
+/* ---------- TASK 3 ---------- */
 SELECT first_name, last_name, salary FROM employees
 WHERE first_name LIKE '_a%'
 INTERSECT
@@ -35,7 +35,7 @@ SELECT first_name, last_name, salary FROM employees
 WHERE LOWER(last_name) LIKE '%s%'
 ORDER BY salary DESC;
 
----------- TASK 4 ----------
+/* ---------- TASK 4 ---------- */
 SELECT location_id, postal_code, city FROM locations
 WHERE country_id IN ('DE', 'IT')
 UNION ALL
@@ -51,7 +51,7 @@ UNION ALL
 SELECT location_id, postal_code, city FROM locations
 WHERE postal_code LIKE '%9%';
 
----------- TASK 5 ----------
+/* ---------- TASK 5 ---------- */
 SELECT country_id id, country_name country, region_id region
 FROM countries
 WHERE LENGTH(country_name) > 8
@@ -76,7 +76,7 @@ WHERE region_id != (
 )
 ORDER BY country DESC;
 
---------------------------------------------------------------------------------
+/* -------------------------------------------------------------------------- */
 SELECT * FROM jobs WHERE job_id LIKE '%MAN%'
 UNION ALL
 SELECT * FROM jobs WHERE job_id LIKE '%MAN%';
@@ -207,4 +207,4 @@ GROUP BY department_id
 UNION
 SELECT TO_NUMBER(null), job_id, SUM(salary) FROM employees
 GROUP BY job_id;
---------------------------------------------------------------------------------
+/* -------------------------------------------------------------------------- */

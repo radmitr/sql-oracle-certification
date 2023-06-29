@@ -1,4 +1,4 @@
----------- TASK 1 ----------
+/* ---------- TASK 1 ---------- */
 CREATE TABLE emp1000 AS (
     SELECT first_name, last_name, salary, department_id
     FROM employees
@@ -8,7 +8,7 @@ SELECT * FROM emp1000;
 CREATE TABLE emp1000 AS
 SELECT first_name, last_name, salary, department_id FROM employees;
 
----------- TASK 2 ----------
+/* ---------- TASK 2 ---------- */
 CREATE FORCE VIEW v1000 AS (
     SELECT first_name, last_name, salary, department_name, city
     FROM emp1000 e JOIN departments d
@@ -21,39 +21,39 @@ SELECT first_name, last_name, salary, department_name, city
 FROM emp1000 e JOIN departments d
 ON (e.department_id = d.department_id);
 
----------- TASK 3 ----------
+/* ---------- TASK 3 ---------- */
 ALTER TABLE emp1000 ADD (city VARCHAR2(25));
 
----------- TASK 4 ----------
+/* ---------- TASK 4 ---------- */
 ALTER VIEW v1000 COMPILE;
 SELECT * FROM v1000;
 
----------- TASK 5 ----------
+/* ---------- TASK 5 ---------- */
 CREATE SYNONYM syn1000 FOR v1000;
 SELECT * FROM syn1000;
 
----------- TASK 6 ----------
+/* ---------- TASK 6 ---------- */
 DROP VIEW v1000;
 
----------- TASK 7 ----------
+/* ---------- TASK 7 ---------- */
 DROP SYNONYM syn1000;
 
----------- TASK 8 ----------
+/* ---------- TASK 8 ---------- */
 DROP TABLE emp1000;
 
----------- TASK 9 ----------
+/* ---------- TASK 9 ---------- */
 CREATE SEQUENCE seq1000
 INCREMENT BY 4
 START WITH 12
 MAXVALUE 200
 CYCLE;
 
----------- TASK 10 ----------
+/* ---------- TASK 10 ---------- */
 ALTER SEQUENCE seq1000
 NOMAXVALUE
 NOCYCLE;
 
----------- TASK 11 ----------
+/* ---------- TASK 11 ---------- */
 INSERT INTO employees (employee_id, last_name, email, hire_date, job_id)
 VALUES (seq1000.NEXTVAL, 'Petrov', 'VPETROV',
         TO_DATE('20/05/2023', 'dd/MM/YYYY'), 'IT_PROG');
@@ -61,12 +61,12 @@ VALUES (seq1000.NEXTVAL, 'Petrov', 'VPETROV',
 INSERT INTO employees (employee_id, last_name, email, hire_date, job_id)
 VALUES (seq1000.NEXTVAL, 'Ivanov', 'MIVANOV', SYSDATE - 7, 'IT_PROG');
 
----------- TASK 12 ----------
+/* ---------- TASK 12 ---------- */
 COMMIT;
 
 SELECT * FROM employees;
 
---------------------------------------------------------------------------------
+/* -------------------------------------------------------------------------- */
 SELECT * FROM employees;
 
 CREATE VIEW fin_emp AS
@@ -361,4 +361,4 @@ CREATE SEQUENCE s20;
 
 SELECT s20.CURRVAL FROM DUAL;
 SELECT s20.NEXTVAL FROM DUAL;
---------------------------------------------------------------------------------
+/* -------------------------------------------------------------------------- */

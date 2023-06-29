@@ -1,9 +1,9 @@
----------- TASK 1 ----------
+/* ---------- TASK 1 ---------- */
 CREATE TABLE locations2 AS (SELECT * FROM locations WHERE 1=2);
 
 SELECT * FROM locations2;
 
----------- TASK 2 ----------
+/* ---------- TASK 2 ---------- */
 INSERT INTO locations2 (location_id, street_address, city, country_id) (
     SELECT location_id, street_address, city, country_id FROM locations
     WHERE country_id = (
@@ -19,10 +19,10 @@ VALUES (3300, '1314 Sezam', 'Milan', 'IT');
 INSERT INTO locations2 (location_id, street_address, city, country_id)
 VALUES (3400, '1516 Pushkin', 'Turin', 'IT');
 
----------- TASK 3 ----------
+/* ---------- TASK 3 ---------- */
 COMMIT;
 
----------- TASK 4 ----------
+/* ---------- TASK 4 ---------- */
 INSERT INTO locations2
 VALUES (3500, '1718 De Golle', 12345, INITCAP('paris'),
 'Some province 1', UPPER('fr'));
@@ -31,22 +31,22 @@ INSERT INTO locations2
 VALUES (3600, '1920 Jules Verne', 67890, INITCAP('lion'),
 'Some province 2', UPPER('fr'));
 
----------- TASK 5 ----------
+/* ---------- TASK 5 ---------- */
 COMMIT;
 
----------- TASK 6 ----------
+/* ---------- TASK 6 ---------- */
 INSERT INTO locations2
 (SELECT * FROM locations WHERE LENGTH(state_province) > 9);
 
----------- TASK 7 ----------
+/* ---------- TASK 7 ---------- */
 COMMIT;
 
----------- TASK 8 ----------
+/* ---------- TASK 8 ---------- */
 CREATE TABLE locations4europe AS (SELECT * FROM locations WHERE 1=2);
 
 SELECT * FROM locations4europe;
 
----------- TASK 9 ----------
+/* ---------- TASK 9 ---------- */
 INSERT ALL
 WHEN 1=1 THEN
 INTO locations2
@@ -63,10 +63,10 @@ INTO locations4europe (location_id, street_address, city, country_id)
 VALUES (location_id, street_address, city, country_id)
 SELECT * FROM locations;
 
----------- TASK 10 ----------
+/* ---------- TASK 10 ---------- */
 COMMIT;
 
----------- TASK 11 ----------
+/* ---------- TASK 11 ---------- */
 UPDATE locations2 SET postal_code = 77777
 WHERE postal_code IS NULL;
 
@@ -74,40 +74,40 @@ SELECT * FROM locations2 WHERE postal_code IS NULL;
 
 SELECT * FROM locations2;
 
----------- TASK 12 ----------
+/* ---------- TASK 12 ---------- */
 ROLLBACK;
 
----------- TASK 13 ----------
+/* ---------- TASK 13 ---------- */
 UPDATE locations2 SET postal_code =
 (SELECT postal_code FROM locations WHERE location_id = 2600)
 WHERE postal_code IS NULL;
 
----------- TASK 14 ----------
+/* ---------- TASK 14 ---------- */
 COMMIT;
 
----------- TASK 15 ----------
+/* ---------- TASK 15 ---------- */
 DELETE FROM locations2 WHERE country_id = 'IT';
 
----------- TASK 16 ----------
+/* ---------- TASK 16 ---------- */
 SAVEPOINT sp1;
 
----------- TASK 17 ----------
+/* ---------- TASK 17 ---------- */
 UPDATE locations2 SET street_address = 'Sezam st. 18'
 WHERE location_id > 2500;
 
----------- TASK 18 ----------
+/* ---------- TASK 18 ---------- */
 SAVEPOINT sp2;
 
----------- TASK 19 ----------
+/* ---------- TASK 19 ---------- */
 DELETE FROM locations2 WHERE street_address = 'Sezam st. 18';
 
----------- TASK 20 ----------
+/* ---------- TASK 20 ---------- */
 ROLLBACK TO SAVEPOINT sp1;
 
----------- TASK 21 ----------
+/* ---------- TASK 21 ---------- */
 COMMIT;
 
---------------------------------------------------------------------------------
+/* -------------------------------------------------------------------------- */
 SELECT * FROM employees;
 SELECT * FROM countries;
 
@@ -304,4 +304,4 @@ COMMIT;
 
 UPDATE new_emps SET emp_id = 250 WHERE name = 'Igor';
 COMMIT;
---------------------------------------------------------------------------------
+/* -------------------------------------------------------------------------- */

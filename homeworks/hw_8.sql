@@ -1,12 +1,12 @@
----------- TASK 1 ----------
+/* ---------- TASK 1 ---------- */
 SELECT * FROM employees
 WHERE LENGTH(first_name) = (SELECT MAX(LENGTH(first_name)) FROM employees);
 
----------- TASK 2 ----------
+/* ---------- TASK 2 ---------- */
 SELECT * FROM employees
 WHERE salary > (SELECT AVG(salary) FROM employees);
 
----------- TASK 3 ----------
+/* ---------- TASK 3 ---------- */
 SELECT city, SUM(salary)
 FROM employees e
 JOIN departments d ON (e.department_id = d.department_id)
@@ -19,25 +19,25 @@ HAVING SUM(salary) = (
     GROUP BY city
 );
 
----------- TASK 4 ----------
+/* ---------- TASK 4 ---------- */
 SELECT * FROM employees
 WHERE manager_id IN (SELECT manager_id FROM employees WHERE salary > 15000);
 
----------- TASK 5 ----------
+/* ---------- TASK 5 ---------- */
 SELECT * FROM departments
 WHERE department_id NOT IN (
     SELECT DISTINCT department_id FROM employees
     WHERE department_id IS NOT NULL
 );
 
----------- TASK 6 ----------
+/* ---------- TASK 6 ---------- */
 SELECT * FROM employees
 WHERE employee_id NOT IN (
     SELECT DISTINCT manager_id FROM employees
     WHERE manager_id IS NOT NULL
 );
 
----------- TASK 7 ----------
+/* ---------- TASK 7 ---------- */
 SELECT * FROM employees
 WHERE employee_id IN (
     SELECT manager_id FROM employees
@@ -51,14 +51,14 @@ WHERE (
     WHERE manager_id = e.employee_id
 ) > 6;
 
----------- TASK 8 ----------
+/* ---------- TASK 8 ---------- */
 SELECT * FROM employees
 WHERE department_id = (
     SELECT department_id FROM departments
     WHERE department_name = 'IT'
 );
 
----------- TASK 9 ----------
+/* ---------- TASK 9 ---------- */
 SELECT * FROM employees e
 WHERE TO_CHAR(hire_date, 'YYYY') < '2005'
 AND (
@@ -79,7 +79,7 @@ AND manager_id IN (
     WHERE TO_CHAR(hire_date, 'YYYY') = '2005'
 );
 
----------- TASK 10 ----------
+/* ---------- TASK 10 ---------- */
 SELECT * FROM employees e
 WHERE manager_id IN (
     SELECT employee_id FROM employees
@@ -89,7 +89,7 @@ WHERE manager_id IN (
     WHERE job_id = e.job_id
 ) > 15;
 
---------------------------------------------------------------------------------
+/* -------------------------------------------------------------------------- */
 SELECT first_name, last_name, salary
 FROM employees
 WHERE salary > (SELECT AVG(salary) FROM employees);
@@ -247,4 +247,4 @@ WHERE salary > ALL (SELECT salary FROM employees WHERE first_name = 'David');
 
 SELECT first_name, last_name, salary FROM employees
 WHERE salary > (SELECT MAX(salary) FROM employees WHERE first_name = 'David');
---------------------------------------------------------------------------------
+/* -------------------------------------------------------------------------- */

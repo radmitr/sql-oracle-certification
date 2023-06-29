@@ -1,4 +1,4 @@
----------- TASK 1 ----------
+/* ---------- TASK 1 ---------- */
 CREATE TABLE friends AS (
     SELECT employee_id id, first_name name, last_name surname
     FROM employees
@@ -11,26 +11,26 @@ SELECT employee_id id, first_name name, last_name surname
 FROM employees
 WHERE commission_pct IS NOT NULL;
 
----------- TASK 2 ----------
+/* ---------- TASK 2 ---------- */
 ALTER TABLE friends
 ADD (email VARCHAR(25));
 
----------- TASK 3 ----------
+/* ---------- TASK 3 ---------- */
 ALTER TABLE friends
 MODIFY (email VARCHAR(25) DEFAULT 'no email');
 
----------- TASK 4 ----------
+/* ---------- TASK 4 ---------- */
 INSERT INTO friends (id, name, surname)
 VALUES (300, 'Vladimir', 'Radionov');
 
----------- TASK 5 ----------
+/* ---------- TASK 5 ---------- */
 ALTER TABLE friends
 RENAME COLUMN id TO friends_id;
 
----------- TASK 6 ----------
+/* ---------- TASK 6 ---------- */
 DROP TABLE friends;
 
----------- TASK 7 ----------
+/* ---------- TASK 7 ---------- */
 CREATE TABLE friends (
     id INTEGER,
     name VARCHAR2(25),
@@ -42,45 +42,45 @@ CREATE TABLE friends (
 );
 SELECT * FROM friends;
 
----------- TASK 8 ----------
+/* ---------- TASK 8 ---------- */
 INSERT INTO friends
 VALUES (1, 'Stanislav', 'Miturich', 'stanislav.miturich@gmail.com', 150000, 'Sevastopol', TO_DATE('13-AUG-1987', 'DD-MON-YYYY'));
 
----------- TASK 9 ----------
+/* ---------- TASK 9 ---------- */
 INSERT INTO friends (id, name, surname, email, city)
 VALUES (2, 'Vladimir', 'Radionov', 'rvladimir@mail.ru', 'Murmansk');
 
----------- TASK 10 ----------
+/* ---------- TASK 10 ---------- */
 COMMIT;
 
----------- TASK 11 ----------
+/* ---------- TASK 11 ---------- */
 ALTER TABLE friends
 DROP COLUMN salary;
 
----------- TASK 12 ----------
+/* ---------- TASK 12 ---------- */
 ALTER TABLE friends
 SET UNUSED COLUMN email;
 
----------- TASK 13 ----------
+/* ---------- TASK 13 ---------- */
 ALTER TABLE friends
 SET UNUSED COLUMN birthday;
 
----------- TASK 14 ----------
+/* ---------- TASK 14 ---------- */
 ALTER TABLE friends DROP UNUSED COLUMNS;
 
----------- TASK 15 ----------
+/* ---------- TASK 15 ---------- */
 ALTER TABLE friends READ ONLY;
 
----------- TASK 16 ----------
+/* ---------- TASK 16 ---------- */
 UPDATE friends SET city = 'Sevastopol' WHERE id = 2;
 
----------- TASK 17 ----------
+/* ---------- TASK 17 ---------- */
 TRUNCATE TABLE friends;
  
----------- TASK 18 ----------
+/* ---------- TASK 18 ---------- */
 DROP TABLE friends;
 
---------------------------------------------------------------------------------
+/* -------------------------------------------------------------------------- */
 SELECT * FROM user_objects;
 
 SELECT object_type, count(object_type) FROM user_objects
@@ -216,4 +216,4 @@ SELECT * FROM students;
 TRUNCATE TABLE students;
 
 DROP TABLE students;
---------------------------------------------------------------------------------
+/* -------------------------------------------------------------------------- */

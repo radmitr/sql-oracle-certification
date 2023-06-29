@@ -1,4 +1,4 @@
----------- TASK 1 ----------
+/* ---------- TASK 1 ---------- */
 CREATE TABLE test200 (
     id INTEGER,
     name1 VARCHAR2(25),
@@ -8,24 +8,24 @@ CREATE TABLE test200 (
 );
 SELECT * FROM test200;
 
----------- TASK 2 ----------
+/* ---------- TASK 2 ---------- */
 UPDATE test200 SET &col = &val WHERE id = &id_val;
 
 SET VERIFY OFF;
 SET VERIFY ON;
 
----------- TASK 3 ----------
+/* ---------- TASK 3 ---------- */
 SELECT * FROM test200
 WHERE name1 = '&&val1' AND name2 = '&val1'
 AND address1 = '&&val2' AND address2 = '&val2';
 
----------- TASK 4 ----------
+/* ---------- TASK 4 ---------- */
 UNDEFINE val1;
 UNDEFINE val2;
 
 DEFINE;
 
---------------------------------------------------------------------------------
+/* -------------------------------------------------------------------------- */
 SELECT first_name, last_name, salary
 FROM employees
 WHERE employee_id = 130;
@@ -100,4 +100,4 @@ DEFINE;
 DEFINE bukva = a;
 SET DEFINE OFF;
 SET DEFINE ON;
---------------------------------------------------------------------------------
+/* -------------------------------------------------------------------------- */

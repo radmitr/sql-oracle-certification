@@ -1,4 +1,4 @@
----------- TASK 1 ----------
+/* ---------- TASK 1 ---------- */
 CREATE TABLE address (
     id INTEGER CONSTRAINT ad_id_unique UNIQUE,
     country VARCHAR2(25),
@@ -13,7 +13,7 @@ CREATE TABLE address (
 );
 SELECT * FROM address;
 
----------- TASK 2 ----------
+/* ---------- TASK 2 ---------- */
 CREATE TABLE friends (
     id INTEGER,
     name VARCHAR2(25),
@@ -34,25 +34,25 @@ CREATE TABLE friends (
 );
 SELECT * FROM friends;
 
----------- TASK 3 ----------
+/* ---------- TASK 3 ---------- */
 CREATE UNIQUE INDEX fr_id_un_in ON friends (id);
 
----------- TASK 4 ----------
+/* ---------- TASK 4 ---------- */
 ALTER TABLE friends ADD CONSTRAINT fr_id_pk PRIMARY KEY (id);
 
----------- TASK 5 ----------
+/* ---------- TASK 5 ---------- */
 CREATE INDEX fr_email_in ON friends (email);
 
----------- TASK 6 ----------
+/* ---------- TASK 6 ---------- */
 ALTER TABLE friends MODIFY (email CONSTRAINT fr_email_nn NOT NULL);
 
----------- TASK 7 ----------
+/* ---------- TASK 7 ---------- */
 DROP TABLE friends;
 
----------- TASK 8 ----------
+/* ---------- TASK 8 ---------- */
 DROP TABLE address;
 
---------------------------------------------------------------------------------
+/* -------------------------------------------------------------------------- */
 CREATE TABLE students (
     id NUMBER,
     name VARCHAR2(15),
@@ -962,4 +962,4 @@ SELECT * FROM students;
 
 CREATE BITMAP INDEX b_ind1 ON students (faculty_id);
 SELECT * FROM v$version;
---------------------------------------------------------------------------------
+/* -------------------------------------------------------------------------- */
