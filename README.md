@@ -4,6 +4,7 @@
 
 **SQL, Oracle SQL**  
 DML, DDL, TCL, DCL commands, functions, objects  
+SQL\*Plus, Oracle SQL Developer
 
 <details>
     <summary>
