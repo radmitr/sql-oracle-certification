@@ -8,7 +8,7 @@ SQL\*Plus, Oracle SQL Developer
 
 <details>
     <summary>
-        <h3>Программа курса</h3>
+        <b>Программа курса</b>
     </summary>
 
 1. **Введение в SQL**  
